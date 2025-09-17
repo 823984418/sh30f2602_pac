@@ -1,0 +1,28 @@
+[package]
+name = "sh30f2602_pac"
+version = "0.1.0"
+edition = "2021"
+description = "Peripheral access crate for the SH30F2602 MCU"
+keywords = [
+    "no-std",
+    "embedded",
+]
+categories = [
+    "no-std",
+    "embedded",
+    "hardware-support",
+]
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+critical-section = { version = "1.2", optional = true }
+cortex-m = "0.7"
+cortex-m-rt = { version = "0.7", optional = true }
+vcell = "0.1"
+
+[features]
+rt = ["cortex-m-rt/device"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--generate-link-to-definition"]

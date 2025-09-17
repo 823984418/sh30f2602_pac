@@ -1,0 +1,26 @@
+PROVIDE(WWDT = DefaultHandler);
+PROVIDE(BOD = DefaultHandler);
+PROVIDE(RCC = DefaultHandler);
+PROVIDE(EXTI0 = DefaultHandler);
+PROVIDE(EXTI1 = DefaultHandler);
+PROVIDE(EXTI2 = DefaultHandler);
+PROVIDE(EXTI3 = DefaultHandler);
+PROVIDE(MCM_FLT = DefaultHandler);
+PROVIDE(MCM_PWM = DefaultHandler);
+PROVIDE(ADC = DefaultHandler);
+PROVIDE(PCA0 = DefaultHandler);
+PROVIDE(PCA0_FLT = DefaultHandler);
+PROVIDE(CMP2 = DefaultHandler);
+PROVIDE(CMP0 = DefaultHandler);
+PROVIDE(CMP1 = DefaultHandler);
+PROVIDE(EXTI4 = DefaultHandler);
+PROVIDE(EXTI5 = DefaultHandler);
+PROVIDE(PWM3 = DefaultHandler);
+PROVIDE(SPI0 = DefaultHandler);
+PROVIDE(UART0 = DefaultHandler);
+PROVIDE(UART1 = DefaultHandler);
+PROVIDE(PWM4 = DefaultHandler);
+PROVIDE(TIM7 = DefaultHandler);
+PROVIDE(TIM8 = DefaultHandler);
+PROVIDE(EXTI6_7 = DefaultHandler);
+
