@@ -102,6 +102,24 @@ impl R {
         Rev0R::new(((self.bits >> 21) & 0x07ff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PWMINTF")
+            .field("rev0", &self.rev0())
+            .field("flt2statc", &self.flt2statc())
+            .field("flt1statc", &self.flt1statc())
+            .field("flt0statc", &self.flt0statc())
+            .field("pwmifc", &self.pwmifc())
+            .field("fltsc", &self.fltsc())
+            .field("rev1", &self.rev1())
+            .field("flt2stat", &self.flt2stat())
+            .field("flt1stat", &self.flt1stat())
+            .field("flt0stat", &self.flt0stat())
+            .field("pwmif", &self.pwmif())
+            .field("flts", &self.flts())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 5:15"]
     #[inline(always)]

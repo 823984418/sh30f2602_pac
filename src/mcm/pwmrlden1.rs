@@ -22,6 +22,14 @@ impl R {
         Rev0R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PWMRLDEN1")
+            .field("rev0", &self.rev0())
+            .field("pwmrlden1", &self.pwmrlden1())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]

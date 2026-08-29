@@ -67,6 +67,19 @@ impl R {
         Rev0R::new((self.bits >> 6) & 0x03ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AHBRSTR")
+            .field("rev0", &self.rev0())
+            .field("adcrst", &self.adcrst())
+            .field("macprst", &self.macprst())
+            .field("rev1", &self.rev1())
+            .field("syscfgrst", &self.syscfgrst())
+            .field("mcmrst", &self.mcmrst())
+            .field("gpiorst", &self.gpiorst())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

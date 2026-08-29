@@ -31,6 +31,15 @@ impl R {
         Rev0R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("POSTDCR")
+            .field("rev0", &self.rev0())
+            .field("ostden", &self.ostden())
+            .field("rev1", &self.rev1())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:6"]
     #[inline(always)]

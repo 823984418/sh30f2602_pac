@@ -157,6 +157,29 @@ impl R {
         Rev0R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("TTLEN")
+            .field("rev0", &self.rev0())
+            .field("ttlen15", &self.ttlen15())
+            .field("ttlen14", &self.ttlen14())
+            .field("ttlen13", &self.ttlen13())
+            .field("ttlen12", &self.ttlen12())
+            .field("ttlen11", &self.ttlen11())
+            .field("rev1", &self.rev1())
+            .field("ttlen9", &self.ttlen9())
+            .field("rev2", &self.rev2())
+            .field("ttlen7", &self.ttlen7())
+            .field("rev3", &self.rev3())
+            .field("ttlen5", &self.ttlen5())
+            .field("ttlen4", &self.ttlen4())
+            .field("rev4", &self.rev4())
+            .field("ttlen2", &self.ttlen2())
+            .field("ttlen1", &self.ttlen1())
+            .field("ttlen0", &self.ttlen0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

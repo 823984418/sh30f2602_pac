@@ -51,6 +51,19 @@ impl R {
         Rev0R::new((self.bits >> 6) & 0x03ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RSTSTR")
+            .field("rev0", &self.rev0())
+            .field("wwdtrstf", &self.wwdtrstf())
+            .field("iwdtrstf", &self.iwdtrstf())
+            .field("swrstf", &self.swrstf())
+            .field("porstf", &self.porstf())
+            .field("lvrstf", &self.lvrstf())
+            .field("pinrstf", &self.pinrstf())
+            .finish()
+    }
+}
 #[doc = "RSTSTR\n\nYou can [`read`](crate::Reg::read) this register and get [`rststr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RststrSpec;
 impl crate::RegisterSpec for RststrSpec {

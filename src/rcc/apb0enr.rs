@@ -130,6 +130,26 @@ impl R {
         Rev0R::new((self.bits >> 15) & 0x0001_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("APB0ENR")
+            .field("rev0", &self.rev0())
+            .field("ntesten", &self.ntesten())
+            .field("rev1", &self.rev1())
+            .field("pca0en", &self.pca0en())
+            .field("amocen", &self.amocen())
+            .field("wwdten", &self.wwdten())
+            .field("pwm4en", &self.pwm4en())
+            .field("spi0en", &self.spi0en())
+            .field("pwm3en", &self.pwm3en())
+            .field("uart1en", &self.uart1en())
+            .field("uart0en", &self.uart0en())
+            .field("rev2", &self.rev2())
+            .field("tim8en", &self.tim8en())
+            .field("tim7en", &self.tim7en())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

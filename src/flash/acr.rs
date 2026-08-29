@@ -85,6 +85,21 @@ impl R {
         LockR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ACR")
+            .field("lock", &self.lock())
+            .field("rev0", &self.rev0())
+            .field("prften", &self.prften())
+            .field("crst", &self.crst())
+            .field("dben", &self.dben())
+            .field("iben", &self.iben())
+            .field("cachen", &self.cachen())
+            .field("rev1", &self.rev1())
+            .field("latency", &self.latency())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:2"]
     #[inline(always)]

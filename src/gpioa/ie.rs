@@ -157,6 +157,29 @@ impl R {
         Rev0R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IE")
+            .field("rev0", &self.rev0())
+            .field("ie15", &self.ie15())
+            .field("ie14", &self.ie14())
+            .field("ie13", &self.ie13())
+            .field("ie12", &self.ie12())
+            .field("ie11", &self.ie11())
+            .field("ie10", &self.ie10())
+            .field("ie9", &self.ie9())
+            .field("ie8", &self.ie8())
+            .field("ie7", &self.ie7())
+            .field("ie6", &self.ie6())
+            .field("ie5", &self.ie5())
+            .field("ie4", &self.ie4())
+            .field("ie3", &self.ie3())
+            .field("ie2", &self.ie2())
+            .field("ie1", &self.ie1())
+            .field("ie0", &self.ie0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

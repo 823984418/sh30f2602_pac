@@ -85,6 +85,21 @@ impl R {
         Rev0R::new(((self.bits >> 21) & 0x07ff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CFGR")
+            .field("rev0", &self.rev0())
+            .field("rev1", &self.rev1())
+            .field("rev2", &self.rev2())
+            .field("rev3", &self.rev3())
+            .field("pllf", &self.pllf())
+            .field("pllk", &self.pllk())
+            .field("rev4", &self.rev4())
+            .field("ppre", &self.ppre())
+            .field("hpre", &self.hpre())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:2"]
     #[inline(always)]

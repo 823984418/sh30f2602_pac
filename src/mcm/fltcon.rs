@@ -221,6 +221,37 @@ impl R {
         Rev0R::new(((self.bits >> 29) & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FLTCON")
+            .field("rev0", &self.rev0())
+            .field("flt3statc", &self.flt3statc())
+            .field("flt3en", &self.flt3en())
+            .field("flt3s", &self.flt3s())
+            .field("flt3m", &self.flt3m())
+            .field("flt3stat", &self.flt3stat())
+            .field("fout1", &self.fout1())
+            .field("fout0", &self.fout0())
+            .field("rev1", &self.rev1())
+            .field("flt0statc", &self.flt0statc())
+            .field("flt1statc", &self.flt1statc())
+            .field("flt2statc", &self.flt2statc())
+            .field("flt0en", &self.flt0en())
+            .field("flt0s", &self.flt0s())
+            .field("flt0m", &self.flt0m())
+            .field("flt0stat", &self.flt0stat())
+            .field("flt1en", &self.flt1en())
+            .field("flt1s", &self.flt1s())
+            .field("flt1m", &self.flt1m())
+            .field("flt1stat", &self.flt1stat())
+            .field("flt2deb", &self.flt2deb())
+            .field("flt2en", &self.flt2en())
+            .field("flt2s", &self.flt2s())
+            .field("flt2m", &self.flt2m())
+            .field("flt2stat", &self.flt2stat())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 1"]
     #[inline(always)]

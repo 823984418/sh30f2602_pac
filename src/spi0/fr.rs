@@ -118,6 +118,26 @@ impl R {
         Rev0R::new(((self.bits >> 22) & 0x03ff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FR")
+            .field("rev0", &self.rev0())
+            .field("wcolc", &self.wcolc())
+            .field("rxovc", &self.rxovc())
+            .field("modfc", &self.modfc())
+            .field("rev1", &self.rev1())
+            .field("sptic", &self.sptic())
+            .field("spric", &self.spric())
+            .field("rev2", &self.rev2())
+            .field("wcol", &self.wcol())
+            .field("rxov", &self.rxov())
+            .field("modf", &self.modf())
+            .field("busy", &self.busy())
+            .field("spti", &self.spti())
+            .field("spri", &self.spri())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 6:15"]
     #[inline(always)]

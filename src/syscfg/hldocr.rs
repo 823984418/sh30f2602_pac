@@ -40,6 +40,16 @@ impl R {
         LockR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("HLDOCR")
+            .field("lock", &self.lock())
+            .field("rev0", &self.rev0())
+            .field("idcen", &self.idcen())
+            .field("idc", &self.idc())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1"]
     #[inline(always)]

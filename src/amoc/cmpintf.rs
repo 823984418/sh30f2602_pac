@@ -70,6 +70,20 @@ impl R {
         Rev0R::new(((self.bits >> 19) & 0x1fff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CMPINTF")
+            .field("rev0", &self.rev0())
+            .field("c2ifc", &self.c2ifc())
+            .field("c1ifc", &self.c1ifc())
+            .field("c0ifc", &self.c0ifc())
+            .field("rev1", &self.rev1())
+            .field("c2if", &self.c2if())
+            .field("c1if", &self.c1if())
+            .field("c0if", &self.c0if())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 3:15"]
     #[inline(always)]

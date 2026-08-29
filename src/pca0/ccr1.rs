@@ -22,6 +22,14 @@ impl R {
         Ccr1hR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CCR1")
+            .field("ccr1h", &self.ccr1h())
+            .field("ccr1l", &self.ccr1l())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:15"]
     #[inline(always)]

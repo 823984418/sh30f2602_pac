@@ -85,6 +85,21 @@ impl R {
         Rev0R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CFG")
+            .field("rev0", &self.rev0())
+            .field("exti7_en", &self.exti7_en())
+            .field("exti6_en", &self.exti6_en())
+            .field("exti5_en", &self.exti5_en())
+            .field("exti4_en", &self.exti4_en())
+            .field("exti3_en", &self.exti3_en())
+            .field("exti2_en", &self.exti2_en())
+            .field("exti1_en", &self.exti1_en())
+            .field("exti0_en", &self.exti0_en())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

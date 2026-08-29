@@ -128,6 +128,26 @@ impl R {
         Rev0R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CMP1CON")
+            .field("rev0", &self.rev0())
+            .field("cp1nouten", &self.cp1nouten())
+            .field("cmp1vrs", &self.cmp1vrs())
+            .field("rev1", &self.rev1())
+            .field("cmp1en", &self.cmp1en())
+            .field("rev2", &self.rev2())
+            .field("c1smt", &self.c1smt())
+            .field("c1outen", &self.c1outen())
+            .field("c1ies", &self.c1ies())
+            .field("rev3", &self.rev3())
+            .field("c1nchs", &self.c1nchs())
+            .field("c1pchs", &self.c1pchs())
+            .field("c1out", &self.c1out())
+            .field("c1deb", &self.c1deb())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:2"]
     #[inline(always)]

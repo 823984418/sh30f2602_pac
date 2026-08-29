@@ -16,6 +16,14 @@ impl R {
         Rev0R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IDR")
+            .field("rev0", &self.rev0())
+            .field("idr", &self.idr())
+            .finish()
+    }
+}
 #[doc = "IDR\n\nYou can [`read`](crate::Reg::read) this register and get [`idr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct IdrSpec;
 impl crate::RegisterSpec for IdrSpec {

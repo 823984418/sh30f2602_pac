@@ -246,6 +246,42 @@ impl R {
         Rev0R::new(((self.bits >> 30) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PWMINTF")
+            .field("rev0", &self.rev0())
+            .field("fltcmp2ifc", &self.fltcmp2ifc())
+            .field("ostdfc", &self.ostdfc())
+            .field("rev1", &self.rev1())
+            .field("fltcmp1ifc", &self.fltcmp1ifc())
+            .field("fltcmp0ifc", &self.fltcmp0ifc())
+            .field("fltifc", &self.fltifc())
+            .field("pwmpifc", &self.pwmpifc())
+            .field("pwmzifc", &self.pwmzifc())
+            .field("ptdd2ifc", &self.ptdd2ifc())
+            .field("ptud2ifc", &self.ptud2ifc())
+            .field("ptdd1ifc", &self.ptdd1ifc())
+            .field("ptud1ifc", &self.ptud1ifc())
+            .field("ptdd0ifc", &self.ptdd0ifc())
+            .field("ptud0ifc", &self.ptud0ifc())
+            .field("rev2", &self.rev2())
+            .field("fltcmp2if", &self.fltcmp2if())
+            .field("ostdf", &self.ostdf())
+            .field("rev3", &self.rev3())
+            .field("fltcmp1if", &self.fltcmp1if())
+            .field("fltcmp0if", &self.fltcmp0if())
+            .field("fltif", &self.fltif())
+            .field("pwmpif", &self.pwmpif())
+            .field("pwmzif", &self.pwmzif())
+            .field("ptdd2if", &self.ptdd2if())
+            .field("ptud2if", &self.ptud2if())
+            .field("ptdd1if", &self.ptdd1if())
+            .field("ptud1if", &self.ptud1if())
+            .field("ptdd0if", &self.ptdd0if())
+            .field("ptud0if", &self.ptud0if())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 14:15"]
     #[inline(always)]

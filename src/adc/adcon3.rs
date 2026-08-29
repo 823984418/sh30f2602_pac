@@ -22,6 +22,14 @@ impl R {
         Rev0R::new((self.bits >> 1) & 0x7fff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ADCON3")
+            .field("rev0", &self.rev0())
+            .field("adsoc", &self.adsoc())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

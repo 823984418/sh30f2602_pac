@@ -67,6 +67,19 @@ impl R {
         Rev0R::new((self.bits >> 6) & 0x03ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RSTCLR")
+            .field("rev0", &self.rev0())
+            .field("wwdtrstfc", &self.wwdtrstfc())
+            .field("iwdtrstfc", &self.iwdtrstfc())
+            .field("swrstfc", &self.swrstfc())
+            .field("porstfc", &self.porstfc())
+            .field("lvrstfc", &self.lvrstfc())
+            .field("pinrstfc", &self.pinrstfc())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

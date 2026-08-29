@@ -112,6 +112,24 @@ impl R {
         Rev0R::new((self.bits >> 15) & 0x0001_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PWMCON2")
+            .field("rev0", &self.rev0())
+            .field("pcmlden", &self.pcmlden())
+            .field("zcmlden", &self.zcmlden())
+            .field("pdlden", &self.pdlden())
+            .field("zdlden", &self.zdlden())
+            .field("cilden", &self.cilden())
+            .field("dilden", &self.dilden())
+            .field("osync", &self.osync())
+            .field("cmp4", &self.cmp4())
+            .field("cmp3", &self.cmp3())
+            .field("cmp2", &self.cmp2())
+            .field("cmp1", &self.cmp1())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1"]
     #[inline(always)]

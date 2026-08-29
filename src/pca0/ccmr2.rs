@@ -94,6 +94,22 @@ impl R {
         Rev0R::new((self.bits >> 13) & 0x0007_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CCMR2")
+            .field("rev0", &self.rev0())
+            .field("cssel", &self.cssel())
+            .field("icf", &self.icf())
+            .field("cc", &self.cc())
+            .field("sm", &self.sm())
+            .field("fs", &self.fs())
+            .field("cen", &self.cen())
+            .field("tcp", &self.tcp())
+            .field("rev1", &self.rev1())
+            .field("ccie", &self.ccie())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

@@ -40,6 +40,16 @@ impl R {
         Rev0R::new((self.bits >> 3) & 0x1fff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DIVCSR1")
+            .field("rev0", &self.rev0())
+            .field("sat", &self.sat())
+            .field("sign", &self.sign())
+            .field("run", &self.run())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

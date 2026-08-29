@@ -67,6 +67,19 @@ impl R {
         Rev0R::new((self.bits >> 6) & 0x03ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PMANUALCON1")
+            .field("rev0", &self.rev0())
+            .field("pmanual21", &self.pmanual21())
+            .field("pmanual11", &self.pmanual11())
+            .field("pmanual01", &self.pmanual01())
+            .field("pmanual2", &self.pmanual2())
+            .field("pmanual1", &self.pmanual1())
+            .field("pmanual0", &self.pmanual0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

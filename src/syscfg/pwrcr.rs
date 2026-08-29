@@ -67,6 +67,19 @@ impl R {
         Rev0R::new((self.bits >> 11) & 0x001f_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PWRCR")
+            .field("rev0", &self.rev0())
+            .field("lvren", &self.lvren())
+            .field("lvrlv", &self.lvrlv())
+            .field("boden", &self.boden())
+            .field("bodie", &self.bodie())
+            .field("bodmd", &self.bodmd())
+            .field("vbod", &self.vbod())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3"]
     #[inline(always)]

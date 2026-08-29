@@ -31,6 +31,15 @@ impl R {
         LockR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("GPIOBCR")
+            .field("lock", &self.lock())
+            .field("rev0", &self.rev0())
+            .field("bus", &self.bus())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

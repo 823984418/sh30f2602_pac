@@ -76,6 +76,20 @@ impl R {
         LockR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SAFR")
+            .field("lock", &self.lock())
+            .field("rev0", &self.rev0())
+            .field("ien_csm", &self.ien_csm())
+            .field("ien_bod", &self.ien_bod())
+            .field("ien_exti0", &self.ien_exti0())
+            .field("rev1", &self.rev1())
+            .field("swjcfg", &self.swjcfg())
+            .field("rev2", &self.rev2())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1"]
     #[inline(always)]

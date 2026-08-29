@@ -58,6 +58,18 @@ impl R {
         LockR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CR")
+            .field("lock", &self.lock())
+            .field("wwdton", &self.wwdton())
+            .field("wwdtie", &self.wwdtie())
+            .field("rev0", &self.rev0())
+            .field("wwdtpr", &self.wwdtpr())
+            .field("wwdtrlr", &self.wwdtrlr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]

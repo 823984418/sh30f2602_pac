@@ -7,12 +7,12 @@
   <version>1.0</version>                                          <!-- version of this description, adding CMSIS-SVD 1.1 tags -->
   <description>Sinowealth 32-bit Cortex-M3 Microcontroller based device. </description>
   <cpu>                                                           <!-- details about the cpu embedded in the device -->
-    <name>CM3</name>
-    <revision>r2p1</revision>
+    <name>CM0+</name>
+    <revision>r0p1</revision>
     <endian>little</endian>
-    <mpuPresent>true</mpuPresent>
+    <mpuPresent>false</mpuPresent>
     <fpuPresent>false</fpuPresent>
-    <nvicPrioBits>4</nvicPrioBits>
+    <nvicPrioBits>2</nvicPrioBits>
     <vendorSystickConfig>false</vendorSystickConfig>
   </cpu>
   <addressUnitBits>8</addressUnitBits>                            <!-- byte addressable memory -->
@@ -29,8 +29,8 @@
     <!-- Device: PCA0 -->
     <peripheral>
     <name>PCA0</name>
-    <description>PCA0</description>
     <version>1.0</version>
+    <description>PCA0</description>
     <groupName>PCA</groupName>
     <baseAddress>0x40000400</baseAddress>
     <size>32</size>
@@ -721,8 +721,8 @@
     <!-- Device: TIM7 -->
     <peripheral>
     <name>TIM7</name>
-    <description>TIM7</description>
     <version>1.0</version>
+    <description>TIM7</description>
     <groupName>TIMER</groupName>
     <baseAddress>0x40000C00</baseAddress>
     <size>32</size>
@@ -922,8 +922,8 @@
     <!-- Device: TIM8 -->
     <peripheral>
     <name>TIM8</name>
-    <description>TIM8</description>
     <version>1.0</version>
+    <description>TIM8</description>
     <groupName>TIMER</groupName>
     <baseAddress>0x40001000</baseAddress>
     <size>32</size>
@@ -1123,8 +1123,8 @@
     <!-- Device: UART0 -->
     <peripheral>
     <name>UART0</name>
-    <description>UART0</description>
     <version>1.0</version>
+    <description>UART0</description>
     <groupName>UART</groupName>
     <baseAddress>0x40001800</baseAddress>
     <size>32</size>
@@ -1471,8 +1471,8 @@
     <!-- Device: UART1 -->
     <peripheral>
     <name>UART1</name>
-    <description>UART1</description>
     <version>1.0</version>
+    <description>UART1</description>
     <groupName>UART</groupName>
     <baseAddress>0x40001C00</baseAddress>
     <size>32</size>
@@ -1819,8 +1819,8 @@
     <!-- Device: SPI0 -->
     <peripheral>
     <name>SPI0</name>
-    <description>SPI0</description>
     <version>1.0</version>
+    <description>SPI0</description>
     <groupName>SPI</groupName>
     <baseAddress>0x40002400</baseAddress>
     <size>32</size>
@@ -2029,8 +2029,8 @@
     <!-- Device: IWDT -->
     <peripheral>
     <name>IWDT</name>
-    <description>IWDT</description>
     <version>1.0</version>
+    <description>IWDT</description>
     <groupName>IWDT</groupName>
     <baseAddress>0x40003000</baseAddress>
     <size>32</size>
@@ -2100,8 +2100,8 @@
     <!-- Device: WWDT -->
     <peripheral>
     <name>WWDT</name>
-    <description>WWDT</description>
     <version>1.0</version>
+    <description>WWDT</description>
     <groupName>WWDT</groupName>
     <baseAddress>0x40003400</baseAddress>
     <size>32</size>
@@ -2244,8 +2244,8 @@
     <!-- Device: AMOC -->
     <peripheral>
     <name>AMOC</name>
-    <description>AMOC</description>
     <version>1.0</version>
+    <description>AMOC</description>
     <groupName>AMOC</groupName>
     <baseAddress>0x40003800</baseAddress>
     <size>32</size>
@@ -2628,8 +2628,8 @@
     <!-- Device: EXTI -->
     <peripheral>
     <name>EXTI</name>
-    <description>EXTI</description>
     <version>1.0</version>
+    <description>EXTI</description>
     <groupName>EXTI</groupName>
     <baseAddress>0x40004000</baseAddress>
     <size>32</size>
@@ -2996,8 +2996,8 @@
     <!-- Device: PWM3 -->
     <peripheral>
     <name>PWM3</name>
-    <description>PWM3</description>
     <version>1.0</version>
+    <description>PWM3</description>
     <groupName>PWM</groupName>
     <baseAddress>0x40005000</baseAddress>
     <size>32</size>
@@ -3336,8 +3336,8 @@
     <!-- Device: PWM4 -->
     <peripheral>
     <name>PWM4</name>
-    <description>PWM4</description>
     <version>1.0</version>
+    <description>PWM4</description>
     <groupName>PWM</groupName>
     <baseAddress>0x40005400</baseAddress>
     <size>32</size>
@@ -3676,8 +3676,8 @@
     <!-- Device: GPIOA -->
     <peripheral>
     <name>GPIOA</name>
-    <description>GPIOA</description>
     <version>1.0</version>
+    <description>GPIOA</description>
     <groupName>GPIO</groupName>
     <baseAddress>0x40040000</baseAddress>
     <size>32</size>
@@ -4521,8 +4521,8 @@
     <!-- Device: GPIOB -->
     <peripheral>
     <name>GPIOB</name>
-    <description>GPIOB</description>
     <version>1.0</version>
+    <description>GPIOB</description>
     <groupName>GPIO</groupName>
     <baseAddress>0x40040080</baseAddress>
     <size>32</size>
@@ -5366,8 +5366,8 @@
     <!-- Device: GPIOC -->
     <peripheral>
     <name>GPIOC</name>
-    <description>GPIOC</description>
     <version>1.0</version>
+    <description>GPIOC</description>
     <groupName>GPIO</groupName>
     <baseAddress>0x40040100</baseAddress>
     <size>32</size>
@@ -6211,8 +6211,8 @@
     <!-- Device: MCM -->
     <peripheral>
     <name>MCM</name>
-    <description>MCM</description>
     <version>1.0</version>
+    <description>MCM</description>
     <groupName>MCM</groupName>
     <baseAddress>0x40040400</baseAddress>
     <size>32</size>
@@ -7425,8 +7425,8 @@
     <!-- Device: SYSCFG -->
     <peripheral>
     <name>SYSCFG</name>
-    <description>SYSCFG</description>
     <version>1.0</version>
+    <description>SYSCFG</description>
     <groupName>SYSCFG</groupName>
     <baseAddress>0x40040800</baseAddress>
     <size>32</size>
@@ -7713,8 +7713,8 @@
     <!-- Device: RCC -->
     <peripheral>
     <name>RCC</name>
-    <description>RCC</description>
     <version>1.0</version>
+    <description>RCC</description>
     <groupName>RCC</groupName>
     <baseAddress>0x40040C00</baseAddress>
     <size>32</size>
@@ -8338,8 +8338,8 @@
     <!-- Device: FLASH -->
     <peripheral>
     <name>FLASH</name>
-    <description>FLASH</description>
     <version>1.0</version>
+    <description>FLASH</description>
     <groupName>FLASH</groupName>
     <baseAddress>0x40041000</baseAddress>
     <size>32</size>
@@ -8947,8 +8947,8 @@
     <!-- Device: MACP -->
     <peripheral>
     <name>MACP</name>
-    <description>MACP</description>
     <version>1.0</version>
+    <description>MACP</description>
     <groupName>MACP</groupName>
     <baseAddress>0x40041400</baseAddress>
     <size>32</size>
@@ -9242,8 +9242,8 @@
     <!-- Device: ADC -->
     <peripheral>
     <name>ADC</name>
-    <description>ADC</description>
     <version>1.0</version>
+    <description>ADC</description>
     <groupName>ADC</groupName>
     <baseAddress>0x40041800</baseAddress>
     <size>32</size>

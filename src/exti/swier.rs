@@ -4,6 +4,11 @@ pub type W = crate::W<SwierSpec>;
 pub type SwierW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
 #[doc = "Field `rev0` writer - "]
 pub type Rev0W<'a, REG> = crate::FieldWriter<'a, REG, 24, u32>;
+impl core::fmt::Debug for crate::generic::Reg<SwierSpec> {
+    fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
+        write!(f, "(not readable)")
+    }
+}
 impl W {
     #[doc = "Bits 0:7"]
     #[inline(always)]

@@ -16,6 +16,14 @@ impl R {
         Rev0R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ADDR1")
+            .field("rev0", &self.rev0())
+            .field("addr1", &self.addr1())
+            .finish()
+    }
+}
 #[doc = "ADDR1\n\nYou can [`read`](crate::Reg::read) this register and get [`addr1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct Addr1Spec;
 impl crate::RegisterSpec for Addr1Spec {

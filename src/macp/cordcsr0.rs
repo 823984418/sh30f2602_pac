@@ -65,6 +65,19 @@ impl R {
         Rev0R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CORDCSR0")
+            .field("rev0", &self.rev0())
+            .field("mode", &self.mode())
+            .field("rev1", &self.rev1())
+            .field("xymrs", &self.xymrs())
+            .field("rev2", &self.rev2())
+            .field("ovf", &self.ovf())
+            .field("run", &self.run())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

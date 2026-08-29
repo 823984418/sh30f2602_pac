@@ -49,6 +49,17 @@ impl R {
         Rev0R::new((self.bits >> 4) & 0x0fff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OPCON")
+            .field("rev0", &self.rev0())
+            .field("op3en", &self.op3en())
+            .field("op2en", &self.op2en())
+            .field("op1en", &self.op1en())
+            .field("op0en", &self.op0en())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

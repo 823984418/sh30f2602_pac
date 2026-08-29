@@ -38,6 +38,16 @@ impl R {
         Rev0R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SR")
+            .field("rev0", &self.rev0())
+            .field("wwdtif", &self.wwdtif())
+            .field("rev1", &self.rev1())
+            .field("tcnt", &self.tcnt())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 8:14"]
     #[inline(always)]

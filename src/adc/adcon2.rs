@@ -85,6 +85,21 @@ impl R {
         Rev0R::new(((self.bits >> 29) & 7) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ADCON2")
+            .field("rev0", &self.rev0())
+            .field("adout", &self.adout())
+            .field("admaxch2", &self.admaxch2())
+            .field("admaxch1", &self.admaxch1())
+            .field("tgap", &self.tgap())
+            .field("rev1", &self.rev1())
+            .field("ts", &self.ts())
+            .field("admaxch", &self.admaxch())
+            .field("tadc", &self.tadc())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3"]
     #[inline(always)]

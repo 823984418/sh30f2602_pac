@@ -58,6 +58,18 @@ impl R {
         Rev0R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CICLR")
+            .field("rev0", &self.rev0())
+            .field("csmc", &self.csmc())
+            .field("rev1", &self.rev1())
+            .field("pllrdyc", &self.pllrdyc())
+            .field("rev2", &self.rev2())
+            .field("rev3", &self.rev3())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:2"]
     #[inline(always)]

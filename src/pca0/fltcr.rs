@@ -103,6 +103,23 @@ impl R {
         Rev0R::new((self.bits >> 15) & 0x0001_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FLTCR")
+            .field("rev0", &self.rev0())
+            .field("fltie", &self.fltie())
+            .field("fout", &self.fout())
+            .field("rev1", &self.rev1())
+            .field("flt1en", &self.flt1en())
+            .field("flt1sel", &self.flt1sel())
+            .field("flt2deb", &self.flt2deb())
+            .field("flt2en", &self.flt2en())
+            .field("flt2s", &self.flt2s())
+            .field("fltm", &self.fltm())
+            .field("fltstat", &self.fltstat())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

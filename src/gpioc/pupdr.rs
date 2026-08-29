@@ -292,6 +292,44 @@ impl R {
         Rev0R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PUPDR")
+            .field("rev0", &self.rev0())
+            .field("phdr15", &self.phdr15())
+            .field("rev1", &self.rev1())
+            .field("phdr14", &self.phdr14())
+            .field("rev2", &self.rev2())
+            .field("phdr13", &self.phdr13())
+            .field("rev3", &self.rev3())
+            .field("phdr12", &self.phdr12())
+            .field("rev4", &self.rev4())
+            .field("phdr11", &self.phdr11())
+            .field("rev5", &self.rev5())
+            .field("phdr10", &self.phdr10())
+            .field("rev6", &self.rev6())
+            .field("phdr9", &self.phdr9())
+            .field("rev7", &self.rev7())
+            .field("phdr8", &self.phdr8())
+            .field("rev8", &self.rev8())
+            .field("phdr7", &self.phdr7())
+            .field("rev9", &self.rev9())
+            .field("phdr6", &self.phdr6())
+            .field("rev10", &self.rev10())
+            .field("phdr5", &self.phdr5())
+            .field("rev11", &self.rev11())
+            .field("phdr4", &self.phdr4())
+            .field("rev12", &self.rev12())
+            .field("phdr3", &self.phdr3())
+            .field("rev13", &self.rev13())
+            .field("phdr2", &self.phdr2())
+            .field("rev14", &self.rev14())
+            .field("phdr1", &self.phdr1())
+            .field("rev15", &self.rev15())
+            .field("phdr0", &self.phdr0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

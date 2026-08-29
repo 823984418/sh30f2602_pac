@@ -16,6 +16,14 @@ impl R {
         Rev0R::new((self.bits >> 4) & 0x0fff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ADPCH")
+            .field("rev0", &self.rev0())
+            .field("adpch", &self.adpch())
+            .finish()
+    }
+}
 #[doc = "ADPCH\n\nYou can [`read`](crate::Reg::read) this register and get [`adpch::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct AdpchSpec;
 impl crate::RegisterSpec for AdpchSpec {

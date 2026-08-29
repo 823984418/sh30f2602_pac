@@ -157,6 +157,29 @@ impl R {
         Rev0R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ADGAPON")
+            .field("rev0", &self.rev0())
+            .field("gapen15", &self.gapen15())
+            .field("gapen14", &self.gapen14())
+            .field("gapen13", &self.gapen13())
+            .field("gapen12", &self.gapen12())
+            .field("gapen11", &self.gapen11())
+            .field("gapen10", &self.gapen10())
+            .field("gapen9", &self.gapen9())
+            .field("gapen8", &self.gapen8())
+            .field("gapen7", &self.gapen7())
+            .field("gapen6", &self.gapen6())
+            .field("gapen5", &self.gapen5())
+            .field("gapen4", &self.gapen4())
+            .field("gapen3", &self.gapen3())
+            .field("gapen2", &self.gapen2())
+            .field("gapen1", &self.gapen1())
+            .field("gapen0", &self.gapen0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

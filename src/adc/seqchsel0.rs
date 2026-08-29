@@ -76,6 +76,20 @@ impl R {
         Seqch7R::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SEQCHSEL0")
+            .field("seqch7", &self.seqch7())
+            .field("seqch6", &self.seqch6())
+            .field("seqch5", &self.seqch5())
+            .field("seqch4", &self.seqch4())
+            .field("seqch3", &self.seqch3())
+            .field("seqch2", &self.seqch2())
+            .field("seqch1", &self.seqch1())
+            .field("seqch0", &self.seqch0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3"]
     #[inline(always)]

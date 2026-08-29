@@ -130,6 +130,26 @@ impl R {
         Rev0R::new(((self.bits >> 20) & 0x0fff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CFGR")
+            .field("rev0", &self.rev0())
+            .field("syn", &self.syn())
+            .field("ecf", &self.ecf())
+            .field("pue", &self.pue())
+            .field("cc2ue", &self.cc2ue())
+            .field("cc1ue", &self.cc1ue())
+            .field("cc0ue", &self.cc0ue())
+            .field("rev1", &self.rev1())
+            .field("adtsel", &self.adtsel())
+            .field("pie", &self.pie())
+            .field("cie", &self.cie())
+            .field("sden", &self.sden())
+            .field("rev2", &self.rev2())
+            .field("cps", &self.cps())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:2"]
     #[inline(always)]

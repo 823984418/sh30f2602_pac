@@ -136,6 +136,28 @@ impl R {
         Rev0R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SR")
+            .field("rev0", &self.rev0())
+            .field("cifc", &self.cifc())
+            .field("rev1", &self.rev1())
+            .field("pifc", &self.pifc())
+            .field("fltifc", &self.fltifc())
+            .field("cc2ifc", &self.cc2ifc())
+            .field("cc1ifc", &self.cc1ifc())
+            .field("cc0ifc", &self.cc0ifc())
+            .field("rev2", &self.rev2())
+            .field("cif", &self.cif())
+            .field("rev3", &self.rev3())
+            .field("pif", &self.pif())
+            .field("fltif", &self.fltif())
+            .field("cc2if", &self.cc2if())
+            .field("cc1if", &self.cc1if())
+            .field("cc0if", &self.cc0if())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 5:6"]
     #[inline(always)]

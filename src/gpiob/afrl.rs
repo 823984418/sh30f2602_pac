@@ -148,6 +148,28 @@ impl R {
         Rev0R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("AFRL")
+            .field("rev0", &self.rev0())
+            .field("afr7", &self.afr7())
+            .field("rev1", &self.rev1())
+            .field("afr6", &self.afr6())
+            .field("rev2", &self.rev2())
+            .field("afr5", &self.afr5())
+            .field("rev3", &self.rev3())
+            .field("afr4", &self.afr4())
+            .field("rev4", &self.rev4())
+            .field("afr3", &self.afr3())
+            .field("rev5", &self.rev5())
+            .field("afr2", &self.afr2())
+            .field("rev6", &self.rev6())
+            .field("afr1", &self.afr1())
+            .field("rev7", &self.rev7())
+            .field("afr0", &self.afr0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:2"]
     #[inline(always)]

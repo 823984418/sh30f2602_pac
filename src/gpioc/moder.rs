@@ -157,6 +157,29 @@ impl R {
         Rev0R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("MODER")
+            .field("rev0", &self.rev0())
+            .field("moder15", &self.moder15())
+            .field("moder14", &self.moder14())
+            .field("moder13", &self.moder13())
+            .field("moder12", &self.moder12())
+            .field("moder11", &self.moder11())
+            .field("moder10", &self.moder10())
+            .field("moder9", &self.moder9())
+            .field("moder8", &self.moder8())
+            .field("moder7", &self.moder7())
+            .field("moder6", &self.moder6())
+            .field("moder5", &self.moder5())
+            .field("moder4", &self.moder4())
+            .field("moder3", &self.moder3())
+            .field("moder2", &self.moder2())
+            .field("moder1", &self.moder1())
+            .field("moder0", &self.moder0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

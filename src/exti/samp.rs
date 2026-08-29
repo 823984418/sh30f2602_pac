@@ -148,6 +148,28 @@ impl R {
         Ps7R::new(((self.bits >> 30) & 3) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("SAMP")
+            .field("ps7", &self.ps7())
+            .field("sn7", &self.sn7())
+            .field("ps6", &self.ps6())
+            .field("sn6", &self.sn6())
+            .field("ps5", &self.ps5())
+            .field("sn5", &self.sn5())
+            .field("ps4", &self.ps4())
+            .field("sn4", &self.sn4())
+            .field("ps3", &self.ps3())
+            .field("sn3", &self.sn3())
+            .field("ps2", &self.ps2())
+            .field("sn2", &self.sn2())
+            .field("ps1", &self.ps1())
+            .field("sn1", &self.sn1())
+            .field("ps0", &self.ps0())
+            .field("sn0", &self.sn0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1"]
     #[inline(always)]

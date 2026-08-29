@@ -70,6 +70,20 @@ impl R {
         Rev0R::new((self.bits >> 9) & 0x007f_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CR")
+            .field("rev0", &self.rev0())
+            .field("csmon", &self.csmon())
+            .field("pllrdy", &self.pllrdy())
+            .field("pllon", &self.pllon())
+            .field("rev1", &self.rev1())
+            .field("rev2", &self.rev2())
+            .field("sws", &self.sws())
+            .field("sw", &self.sw())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1"]
     #[inline(always)]

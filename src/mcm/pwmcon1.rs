@@ -130,6 +130,26 @@ impl R {
         Rev0R::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PWMCON1")
+            .field("rev0", &self.rev0())
+            .field("poutmod", &self.poutmod())
+            .field("postps", &self.postps())
+            .field("ptmod", &self.ptmod())
+            .field("pwmsym", &self.pwmsym())
+            .field("pdcon2", &self.pdcon2())
+            .field("pdcon1", &self.pdcon1())
+            .field("pdcon0", &self.pdcon0())
+            .field("pwm21s", &self.pwm21s())
+            .field("pwm11s", &self.pwm11s())
+            .field("pwm01s", &self.pwm01s())
+            .field("pwm2s", &self.pwm2s())
+            .field("pwm1s", &self.pwm1s())
+            .field("pwm0s", &self.pwm0s())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

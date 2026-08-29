@@ -85,6 +85,21 @@ impl R {
         Adie2R::new(((self.bits >> 31) & 1) != 0)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("ADCON1")
+            .field("adie2", &self.adie2())
+            .field("adstrs2", &self.adstrs2())
+            .field("adie1", &self.adie1())
+            .field("adstrs1", &self.adstrs1())
+            .field("adie", &self.adie())
+            .field("adstrs", &self.adstrs())
+            .field("adon", &self.adon())
+            .field("rev0", &self.rev0())
+            .field("adctu", &self.adctu())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:1"]
     #[inline(always)]

@@ -139,6 +139,27 @@ impl R {
         Rev0R::new(((self.bits >> 18) & 0x3fff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CR")
+            .field("rev0", &self.rev0())
+            .field("spdatl", &self.spdatl())
+            .field("spsff", &self.spsff())
+            .field("spien", &self.spien())
+            .field("rev1", &self.rev1())
+            .field("rev2", &self.rev2())
+            .field("sptie", &self.sptie())
+            .field("sprie", &self.sprie())
+            .field("rev3", &self.rev3())
+            .field("dir", &self.dir())
+            .field("mstr", &self.mstr())
+            .field("cpha", &self.cpha())
+            .field("cpol", &self.cpol())
+            .field("ssdis", &self.ssdis())
+            .field("spr", &self.spr())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bits 0:3"]
     #[inline(always)]

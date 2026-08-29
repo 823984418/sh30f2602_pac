@@ -157,6 +157,29 @@ impl R {
         LockR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("LCKR")
+            .field("lock", &self.lock())
+            .field("lck15", &self.lck15())
+            .field("lck14", &self.lck14())
+            .field("lck13", &self.lck13())
+            .field("lck12", &self.lck12())
+            .field("lck11", &self.lck11())
+            .field("lck10", &self.lck10())
+            .field("lck9", &self.lck9())
+            .field("lck8", &self.lck8())
+            .field("lck7", &self.lck7())
+            .field("lck6", &self.lck6())
+            .field("lck5", &self.lck5())
+            .field("lck4", &self.lck4())
+            .field("lck3", &self.lck3())
+            .field("lck2", &self.lck2())
+            .field("lck1", &self.lck1())
+            .field("lck0", &self.lck0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

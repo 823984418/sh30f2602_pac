@@ -130,6 +130,26 @@ impl R {
         LockR::new(((self.bits >> 16) & 0xffff) as u16)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("DBGCR")
+            .field("lock", &self.lock())
+            .field("rev0", &self.rev0())
+            .field("dbg_spi", &self.dbg_spi())
+            .field("dbg_uart", &self.dbg_uart())
+            .field("dbg_mcm", &self.dbg_mcm())
+            .field("dbg_tim", &self.dbg_tim())
+            .field("dbg_pca", &self.dbg_pca())
+            .field("dbg_wwdt", &self.dbg_wwdt())
+            .field("dbg_iwdt", &self.dbg_iwdt())
+            .field("dbg_pwm", &self.dbg_pwm())
+            .field("rev1", &self.rev1())
+            .field("rev2", &self.rev2())
+            .field("dbg_stop", &self.dbg_stop())
+            .field("rev3", &self.rev3())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

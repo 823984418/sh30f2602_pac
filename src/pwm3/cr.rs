@@ -229,6 +229,37 @@ impl R {
         FltdebR::new(((self.bits >> 28) & 0x0f) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CR")
+            .field("fltdeb", &self.fltdeb())
+            .field("fouta", &self.fouta())
+            .field("foutb", &self.foutb())
+            .field("rev0", &self.rev0())
+            .field("flt2ie", &self.flt2ie())
+            .field("flt1ie", &self.flt1ie())
+            .field("flt0ie", &self.flt0ie())
+            .field("rev1", &self.rev1())
+            .field("flt2en", &self.flt2en())
+            .field("flt1en", &self.flt1en())
+            .field("flt0en", &self.flt0en())
+            .field("rev2", &self.rev2())
+            .field("flt2s", &self.flt2s())
+            .field("flt1s", &self.flt1s())
+            .field("flt0s", &self.flt0s())
+            .field("rev3", &self.rev3())
+            .field("adten", &self.adten())
+            .field("pwmie", &self.pwmie())
+            .field("efltie", &self.efltie())
+            .field("pwmsa", &self.pwmsa())
+            .field("pwmsb", &self.pwmsb())
+            .field("eflt", &self.eflt())
+            .field("fltc", &self.fltc())
+            .field("tck", &self.tck())
+            .field("pwmen", &self.pwmen())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

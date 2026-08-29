@@ -139,6 +139,27 @@ impl R {
         Rev0R::new((self.bits >> 14) & 0x0003_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PWMINTEN")
+            .field("rev0", &self.rev0())
+            .field("fltcmp2ie", &self.fltcmp2ie())
+            .field("ostdie", &self.ostdie())
+            .field("rev1", &self.rev1())
+            .field("fltcmp1ie", &self.fltcmp1ie())
+            .field("fltcmp0ie", &self.fltcmp0ie())
+            .field("fltie", &self.fltie())
+            .field("pwmpie", &self.pwmpie())
+            .field("pwmzie", &self.pwmzie())
+            .field("ptdd2ie", &self.ptdd2ie())
+            .field("ptud2ie", &self.ptud2ie())
+            .field("ptdd1ie", &self.ptdd1ie())
+            .field("ptud1ie", &self.ptud1ie())
+            .field("ptdd0ie", &self.ptdd0ie())
+            .field("ptud0ie", &self.ptud0ie())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

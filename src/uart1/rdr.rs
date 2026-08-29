@@ -23,6 +23,15 @@ impl R {
         Rev0R::new((self.bits >> 9) & 0x007f_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("RDR")
+            .field("rev0", &self.rev0())
+            .field("rb8", &self.rb8())
+            .field("rdr", &self.rdr())
+            .finish()
+    }
+}
 #[doc = "RDR\n\nYou can [`read`](crate::Reg::read) this register and get [`rdr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct RdrSpec;
 impl crate::RegisterSpec for RdrSpec {

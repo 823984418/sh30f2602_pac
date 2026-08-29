@@ -29,6 +29,15 @@ impl R {
         Rev0R::new((self.bits >> 2) & 0x3fff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PWRSR")
+            .field("rev0", &self.rev0())
+            .field("bodf", &self.bodf())
+            .field("bodif", &self.bodif())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]

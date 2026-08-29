@@ -30,6 +30,16 @@ impl R {
         Opt3R::new(((self.bits >> 24) & 0xff) as u8)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OPR_CUST1")
+            .field("opt3", &self.opt3())
+            .field("opt2", &self.opt2())
+            .field("opt1", &self.opt1())
+            .field("opt0", &self.opt0())
+            .finish()
+    }
+}
 #[doc = "OPR_CUST1\n\nYou can [`read`](crate::Reg::read) this register and get [`opr_cust1::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct OprCust1Spec;
 impl crate::RegisterSpec for OprCust1Spec {

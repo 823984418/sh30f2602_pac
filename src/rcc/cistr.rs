@@ -51,6 +51,19 @@ impl R {
         Rev0R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("CISTR")
+            .field("rev0", &self.rev0())
+            .field("csmpllf", &self.csmpllf())
+            .field("rev1", &self.rev1())
+            .field("rev2", &self.rev2())
+            .field("pllrdyif", &self.pllrdyif())
+            .field("rev3", &self.rev3())
+            .field("rev4", &self.rev4())
+            .finish()
+    }
+}
 #[doc = "CISTR\n\nYou can [`read`](crate::Reg::read) this register and get [`cistr::R`](R). See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
 pub struct CistrSpec;
 impl crate::RegisterSpec for CistrSpec {

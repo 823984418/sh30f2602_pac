@@ -40,6 +40,16 @@ impl R {
         Rev0R::new((self.bits >> 3) & 0x1fff_ffff)
     }
 }
+impl core::fmt::Debug for R {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("FORCE")
+            .field("rev0", &self.rev0())
+            .field("fco2", &self.fco2())
+            .field("fco1", &self.fco1())
+            .field("fco0", &self.fco0())
+            .finish()
+    }
+}
 impl W {
     #[doc = "Bit 0"]
     #[inline(always)]
