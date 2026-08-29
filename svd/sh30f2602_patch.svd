@@ -2,10 +2,10 @@
 <device schemaVersion="1.1" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD.xsd" >
   <vendor>Sino Wealth Electronic Ltd.</vendor>                                       <!-- device vendor name -->
   <vendorID>Sinowealth</vendorID>                                        <!-- device vendor short name -->
-  <name>SH32F2xx</name>                                        <!-- name of part-->
-  <series>SH32Fxxx</series>                                         <!-- device series the device belongs to -->
+  <name>SH30F2xx</name>                                        <!-- name of part-->
+  <series>SH30Fxxx</series>                                         <!-- device series the device belongs to -->
   <version>1.0</version>                                          <!-- version of this description, adding CMSIS-SVD 1.1 tags -->
-  <description>Sinowealth 32-bit Cortex-M3 Microcontroller based device. </description>
+  <description>Sinowealth 32-bit Cortex-M0+ Microcontroller based device. </description>
   <cpu>                                                           <!-- details about the cpu embedded in the device -->
     <name>CM0+</name>
     <revision>r0p1</revision>
